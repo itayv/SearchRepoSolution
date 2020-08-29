@@ -1,0 +1,25 @@
+﻿@model IdentityServer.Models.LoginModel
+
+@{ 
+    Layout = "_Layout";
+}
+
+    <h2>התחברות למערכת</h2>
+
+    <form asp-controller="Auth" asp-action="Login" method="post">
+        <input type="hidden" asp-for="ReturnUrl" />
+
+        <div class="row mb-3">
+            <div class="col-2">שם משתמש</div>
+            <div class="col-3"><input class="form-control" asp-for="Username" name="Username" id="Username" type="text" /></div>
+        </div>
+
+        <div class="row mb-1">
+            <div class="col-2">סיסמה</div>
+            <div class="col-3"><input class="form-control" asp-for="Password" name="Password" id="Password" type="password" /></div>
+        </div>
+
+        <div>
+            <button class="btn btn-primary" type="submit">התחבר</button>
+        </div>
+    </form>
